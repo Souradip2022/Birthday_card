@@ -37,7 +37,6 @@ div.book {
   position: absolute;
   perspective: 1500px;
   transition: transform 1s;
-
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   /*border: 2px solid red;*/
@@ -104,8 +103,45 @@ div.book {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+  gap: 20px;
+}
+
+image{
+
+}
+
+.para-back{
+  height: fit-content;
+  width: 90%;
+  font-weight: 550;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.emoji{
+  height: fit-content;
+  width: fit-content;
+  font-size: 4rem;
+}
+
+.para-front2{
+  height: fit-content;
+  width: 90%;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.wish{
+  height: fit-content;
+  width: 8.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  align-self: end;
 }
 
 .back-content {
