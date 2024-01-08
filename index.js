@@ -1,4 +1,4 @@
-let root = document.querySelector(".root");
+let root = document.querySelector("div.root");
 let book = document.querySelector(".book");
 let paper = document.querySelector(".paper");
 let front = document.querySelector(".front")
@@ -23,10 +23,11 @@ function traverseMain() {
   clearTimeout(timeOutId);
 
   timeOutId = setTimeout(() => {
-  coverPage.style.display = "none";
-  root.style.display = "flex";
+    coverPage.classList.add("rmv-cover")
 
-  }, 200)
+    root.style.display = "flex";
+    root.classList.add("root-anim")
+  }, 200);
 }
 
 button.addEventListener("mouseleave", buttonResizing)
@@ -45,7 +46,6 @@ function glowCard() {
 
   timeOutId = setTimeout(() => {
     front.classList.add("glow-front");
-
     paper.style.transform = "scale(1.1)";
   }, 100)
 }

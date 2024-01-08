@@ -12,6 +12,7 @@
 body {
   height: 100vh;
   width: 100vw;
+  background-color: black;
 }
 
 
@@ -26,7 +27,24 @@ div.root {
   display: none;
 }
 
-.root-image{
+.root-anim {
+  animation-delay: 0s;
+  animation: root-animation 3s normal;
+}
+
+@keyframes root-animation {
+  0% {
+
+    opacity: 0;
+  }
+  100% {
+
+    opacity: 1;
+  }
+}
+
+
+.root-image {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -120,13 +138,13 @@ div.book {
   gap: 20px;
 }
 
-img.cover-image{
+img.cover-image {
   height: 396px;
   width: 301px;
 
 }
 
-.para-back{
+.para-back {
   height: fit-content;
   width: 90%;
   font-weight: 550;
@@ -136,13 +154,13 @@ img.cover-image{
   opacity: 0.9;
 }
 
-.emoji{
+.emoji {
   height: fit-content;
   width: fit-content;
   font-size: 4rem;
 }
 
-.para-front2{
+.para-front2 {
   height: fit-content;
   width: 90%;
   font-weight: 600;
@@ -151,7 +169,7 @@ img.cover-image{
   color: #2F4F4F;
 }
 
-.wish{
+.wish {
   height: fit-content;
   width: 6rem;
   font-size: 1.5rem;
@@ -180,7 +198,7 @@ div#p2 {
   transform: rotateY(-140deg);
 }
 
-#p1 .front-border{
+#p1 .front-border {
   border: 4px solid white;
   height: 90%;
   width: 90%;
@@ -189,7 +207,7 @@ div#p2 {
   transform: translate(-50%, -50%);
 }
 
-#p1 .front-border p.f1{
+#p1 .front-border p.f1 {
   content: "";
   height: 5px;
   width: 18%;
@@ -201,30 +219,31 @@ div#p2 {
 }
 
 @keyframes an1 {
-  0%{
+  0% {
     inset: -4px 15%;
   }
-  100%{
+  100% {
     inset: -4px 65%;
   }
 
 }
 
-#p1 .front-border:hover p.f1{
+#p1 .front-border:hover p.f1 {
   /*background-color: red;*/
   animation: frontHover1 0.3s linear;
   inset: -4px 15%;
 }
 
 @keyframes frontHover1 {
-  0%{
+  0% {
     inset: -4px 65%;
   }
-  100%{
+  100% {
     inset: -4px 15%;
   }
 }
-#p1 .front-border p.f2{
+
+#p1 .front-border p.f2 {
   content: "";
   height: 6px;
   width: 18%;
@@ -236,34 +255,34 @@ div#p2 {
 }
 
 @keyframes an2 {
-  100%{
+  100% {
     inset: 99.5% 15%;
   }
-  0%{
+  0% {
     inset: 99.5% 65%;
   }
 }
 
-#p1 .front:hover p.f2{
+#p1 .front:hover p.f2 {
   inset: 99.5% 65%;
   animation: frontHover2 0.3s linear;
 }
 
 @keyframes frontHover2 {
-  0%{
+  0% {
     inset: 99.5% 15%;
   }
-  100%{
+  100% {
     inset: 99.5% 65%;
   }
 }
 
-.add-extra{
+.add-extra {
   height: 100%;
   width: 4px;
   background-color: #f0f8ff;
   z-index: 2;
-  inset:0 104% ;
+  inset: 0 104%;
   position: absolute;
   transform: scale(1.1);
 }

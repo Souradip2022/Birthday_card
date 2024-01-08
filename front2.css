@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Caveat&family=Dancing+Script:wght@400;600;700&family=Grandstander:wght@200&family=Merienda:wght@300&display=swap');
+
 *{
   box-sizing: border-box;
 }
@@ -7,6 +9,7 @@
   width: 100vw;
   position: absolute;
   overflow: hidden;
+  /*border: 4px solid red;*/
 }
 
 canvas {
@@ -17,23 +20,24 @@ canvas {
 }
 
 .button{
-  height: 40px;
+  height: 50px;
   width: 135px;
   position: absolute;
   padding: 0.3rem;
-  background-color: hotpink;
+  background-color: magenta;
   opacity: 0.8;
   inset: 84% 50%;
   transform: translateX(-50%);
   border-radius: 6px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: white;
+  font-family: 'Grandstander', cursive;
 }
 
 .onHover{
-  animation: on-mouse 0.3s linear;
-  height: 50px;
+  animation: on-mouse 0.2s linear;
+  height: 60px;
   width: 150px;
   opacity: 1;
   transform-origin: center;
@@ -46,11 +50,30 @@ canvas {
   }
 
   100%{
-    height: 50px;
+    height: 60px;
     width: 150px;
   }
 }
 
+.rmv-cover{
+  animation: circle-in 2s normal;
+}
 
+@keyframes circle-in{
+  0%{
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    height: 100%;
+    width: 100%;
+  }
+  100%{
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    height: 0;
+    width: 0;
+  }
+}
 
 
