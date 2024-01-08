@@ -1,20 +1,58 @@
+let root = document.querySelector(".root");
 let book = document.querySelector(".book");
 let paper = document.querySelector(".paper");
 let front = document.querySelector(".front")
 let back = document.querySelector(".back");
 let p2Front = document.querySelector("#p2 .front");
 let addExtra = document.querySelector("#p2 #front2");
+let coverPage = document.querySelector(".cover_page");
+let button = document.querySelector(".button");
 let timeOutId;
 
-front.addEventListener("mouseover", glowCard);
-function glowCard() {
-  front.classList.add("glow-front");
-  back.classList.add("glow-front");
-  paper.style.transform = "scale(1.1)";
+button.addEventListener("mouseover", buttonSizing);
+function buttonSizing() {
+  clearTimeout(timeOutId);
 
- }
+  timeOutId = setTimeout(() => {
+    button.classList.add("onHover");
+  }, 100)
+}
+
+button.addEventListener("mousedown", traverseMain);
+function traverseMain() {
+  clearTimeout(timeOutId);
+
+  timeOutId = setTimeout(() => {
+  coverPage.style.display = "none";
+  root.style.display = "flex";
+
+  }, 200)
+}
+
+button.addEventListener("mouseleave", buttonResizing)
+function buttonResizing() {
+  clearTimeout(timeOutId);
+
+  timeOutId = setTimeout(() => {
+    button.classList.remove("onHover");
+  }, 200)
+}
+
+front.addEventListener("mouseover", glowCard);
+
+function glowCard() {
+  clearTimeout(timeOutId);
+
+  timeOutId = setTimeout(() => {
+    front.classList.add("glow-front");
+    back.classList.add("glow-front");
+    paper.style.transform = "scale(1.1)";
+  }, 100)
+}
+
 
 book.addEventListener("mousedown", openCard)
+
 function openCard(event) {
   // Clear any existing timeout
   clearTimeout(timeOutId);
@@ -37,6 +75,7 @@ function openCard(event) {
 }
 
 book.addEventListener("mouseleave", closeCard);
+
 function closeCard(event) {
   clearTimeout(timeOutId);
 

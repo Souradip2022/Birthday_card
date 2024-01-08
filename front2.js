@@ -6,7 +6,7 @@ var w = document.querySelector("#c").width = window.innerWidth,
     hh = h / 2,
 
     opts = {
-      strings: ['HAPPY', '  BIRTHDAY!', 'ANANYA'],
+      strings: ['HAPPY', '  BIRTHDAY!', ' ANANYA'],
       charSize: 66,
       charSpacing: 55,
       lineHeight: 80,
