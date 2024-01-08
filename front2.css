@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Caveat&family=Dancing+Script:wght@400;600;700&family=Grandstander:wght@200&family=Merienda:wght@300&display=swap');
 
-*{
+* {
   box-sizing: border-box;
 }
 
-.cover_page{
+.cover_page {
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -19,7 +19,7 @@ canvas {
   left: 0;
 }
 
-.button{
+.button {
   height: 50px;
   width: 135px;
   position: absolute;
@@ -35,7 +35,7 @@ canvas {
   font-family: 'Grandstander', cursive;
 }
 
-.onHover{
+.onHover {
   animation: on-mouse 0.2s linear;
   height: 60px;
   width: 150px;
@@ -44,30 +44,29 @@ canvas {
 }
 
 @keyframes on-mouse {
-  0%{
+  0% {
     height: 40px;
     width: 135px;
   }
-
-  100%{
+  100% {
     height: 60px;
     width: 150px;
   }
 }
 
-.rmv-cover{
+.rmv-cover {
   animation: circle-in 2s normal;
 }
 
-@keyframes circle-in{
-  0%{
+@keyframes circle-in {
+  0% {
     top: 0;
     left: 0;
     border-radius: 100%;
     height: 100%;
     width: 100%;
   }
-  100%{
+  100% {
     top: 50%;
     left: 50%;
     border-radius: 50%;

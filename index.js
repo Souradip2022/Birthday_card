@@ -24,7 +24,6 @@ function traverseMain() {
 
   timeOutId = setTimeout(() => {
     coverPage.classList.add("rmv-cover")
-
     root.style.display = "flex";
     root.classList.add("root-anim")
   }, 200);

@@ -104,7 +104,7 @@ div.book {
 }
 
 #p2 .front {
-  border-left: 4px solid black;
+  border-left: 2px solid gray;
   border-top-right-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
 }
