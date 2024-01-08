@@ -45,7 +45,7 @@ function glowCard() {
 
   timeOutId = setTimeout(() => {
     front.classList.add("glow-front");
-    back.classList.add("glow-front");
+
     paper.style.transform = "scale(1.1)";
   }, 100)
 }
