@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem;
+  background-color: black;
+}
+
+div.root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  background-color: black;
+}
+
+div.book {
+  width: 300px;
+  height: 390px;
+  position: relative;
+  transition: transform 1s;
+  /*border: 2px solid red;*/
+}
+
+.book div.paper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  perspective: 1500px;
+  transition: transform 1s;
+
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  /*border: 2px solid red;*/
+
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: lightpink;
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.glow-front {
+  box-shadow: 0 0 30px 0.6rem aqua;
+  border-radius: 0.3rem;
+  animation: glow 0.3s linear;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 0 30px 0.6rem aqua;
+  }
+}
+
+.inner-glow {
+  box-shadow: 15px 0 12px 0.5rem aqua;
+  border-radius: 0.3rem;
+}
+
+#p2 .front {
+  border-left: 4px solid black;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.back-border-radius {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  /*border: 4px solid red;*/
+}
+
+.front {
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.back {
+  z-index: 0;
+}
+
+.front-content,
+.back-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-content {
+  transform: rotateY(180deg);
+}
+
+div#p1 {
+  z-index: 2;
+}
+
+div#p2 {
+  z-index: 1;
+}
+
+.flipped .back,
+.flipped .front {
+  transform: rotateY(-140deg);
+}
+
+#p1 .front-border{
+  border: 4px solid white;
+  height: 90%;
+  width: 90%;
+  position: absolute;
+  inset: 50% 50%;
+  transform: translate(-50%, -50%);
+}
+
+#p1 .front-border p.f1{
+  content: "";
+  height: 5px;
+  width: 18%;
+  inset: -4px 65%;
+  background-color: lightpink;
+  z-index: 1;
+  position: absolute;
+  animation: an1 0.3s linear;
+}
+
+@keyframes an1 {
+  0%{
+    inset: -4px 15%;
+  }
+  100%{
+    inset: -4px 65%;
+  }
+
+}
+
+#p1 .front-border:hover p.f1{
+  /*background-color: red;*/
+  animation: frontHover1 0.3s linear;
+  inset: -4px 15%;
+}
+
+@keyframes frontHover1 {
+  0%{
+    inset: -4px 65%;
+  }
+  100%{
+    inset: -4px 15%;
+  }
+}
+#p1 .front-border p.f2{
+  content: "";
+  height: 6px;
+  width: 18%;
+  inset: 99.5% 15%;
+  background-color: lightpink;
+  z-index: 1;
+  position: absolute;
+  animation: an2 0.3s linear;
+}
+
+@keyframes an2 {
+  100%{
+    inset: 99.5% 15%;
+  }
+  0%{
+    inset: 99.5% 65%;
+  }
+}
+
+#p1 .front:hover p.f2{
+  inset: 99.5% 65%;
+  animation: frontHover2 0.3s linear;
+}
+
+@keyframes frontHover2 {
+  0%{
+    inset: 99.5% 15%;
+  }
+  100%{
+    inset: 99.5% 65%;
+  }
+}
+
+.add-extra{
+  height: 100%;
+  width: 4px;
+  background-color: lightpink;
+  z-index: 2;
+  inset:0 104% ;
+  position: absolute;
+  transform: scale(1.1);
+}
